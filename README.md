@@ -5,14 +5,14 @@ First install apache with mysql
 <br>
 -sudo apt-get install apache2 mysql-client mysql-server
 
-Setup mysql
--sudo mysql_secure_installation
+Setup mysql<br>  
+ -sudo mysql_secure_installation<br>
 -sudo mysql -u root -p
 
-Installing mysql python libary
+Installing mysql python libary <br>
 -sudo apt-get install python-mysqldb
 
-Creating a Database user 
+Creating a Database user <br>
 -sudo mysql -u root -p
 
 -GRANT ALL PRIVILEGES ON mydb.* TO 'username'@'localhost' IDENTIFIED BY 'password';
