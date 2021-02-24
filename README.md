@@ -61,7 +61,7 @@ mkdir templates
 Create first Flask App:
 sudo nano __init__.py
 
------------sample code--------------------
+
 #! /bin/usr/python
 from flask import Flask
 
@@ -74,7 +74,6 @@ def homepage():
 
 if __name__ == "__main__":
     app.run()
--------------------------------------------
 
 Press control+x to save it, yes, enter
 
@@ -109,7 +108,6 @@ Stop virtual environment
 Setup Flask configuration file
 -nano /etc/apache2/sites-available/FlaskApp.conf
 
-----------------------------Copy this----------------------------------------
 <VirtualHost *:80>
                 ServerName yourdomain.com(ipaddress)
                 ServerAdmin youremail@email.com
@@ -128,7 +126,6 @@ Setup Flask configuration file
                 CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 
-------------------------------------------------------------------------------
 
 Run
 -sudo a2ensite FlaskApp
@@ -140,7 +137,7 @@ Configure WSGI file
 nano flaskapp.wsgi
 -copy paste this code
 
---------------------code-----------------------------
+
 #!/usr/bin/python
 
 '''add this code if using virtual environment
@@ -154,8 +151,9 @@ logging.basicConfig(stream=sys.stderr)
 sys.path.insert(0,"/var/www/FlaskApp/")
 
 from FlaskApp import app as application
-application.secret_key = "abc1234"
------------------------------------------------------
+application.secret_key = "abc1234 (can be anything)"
+
+
 
 Save and exit
 
