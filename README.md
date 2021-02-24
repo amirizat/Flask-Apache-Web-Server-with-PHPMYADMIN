@@ -1,5 +1,5 @@
 # Flask-Apache-Web-Server-with-PHPMYADMIN
-Install and configure Flask PHPMYADMIN with APACHE
+Install and configure Flask PHPMYADMIN with APACHE 
 
 First install apache with mysql
 -sudo apt-get install apache2 mysql-client mysql-server
