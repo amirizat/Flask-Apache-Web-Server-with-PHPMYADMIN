@@ -2,54 +2,57 @@
 Install and configure Flask PHPMYADMIN with APACHE
 
 First install apache with mysql
-sudo apt-get install apache2 mysql-client mysql-server
+-sudo apt-get install apache2 mysql-client mysql-server
 
 Setup mysql
-sudo mysql_secure_installation
-sudo mysql -u root -p
+-sudo mysql_secure_installation
+-sudo mysql -u root -p
 
 Installing mysql python libary
-sudo apt-get install python-mysqldb
+-sudo apt-get install python-mysqldb
 
 Creating a Database user 
-sudo mysql -u root -p
+-sudo mysql -u root -p
 
-GRANT ALL PRIVILEGES ON mydb.* TO 'username'@'localhost' IDENTIFIED BY 'password';
+-GRANT ALL PRIVILEGES ON mydb.* TO 'username'@'localhost' IDENTIFIED BY 'password';
 #username and password cant be anything
 
 Installing PHPMYADMIN
-sudo apt-get install phpmyadmin
+-sudo apt-get install phpmyadmin
 
 Configuring Apache server 
-sudo nano /etc/apache2/apache2.conf
-Include /etc/phpmyadmin/apache.conf
-sudo /etc/init.d/apache2 restart
+-sudo nano /etc/apache2/apache2.conf
+
+#include this line
+-Include /etc/phpmyadmin/apache.conf
+
+-sudo /etc/init.d/apache2 restart
 
 Open this on a web browser
-localhost/phpmyadmin​
+-localhost/phpmyadmin​
 
-After that, install WSGI 
-sudo apt-get install libapache2-mod-wsgi
+Install WSGI 
+-sudo apt-get install libapache2-mod-wsgi
 
 Enabled WSGI 
-sudo a2enmod wsgi
+-sudo a2enmod wsgi
 
 Set up Flask environment
-cd /var/www/
+Go to the directory
+-cd /var/www/
 
 Make Flask environment directory
-mkdir FlaskApp
+-mkdir FlaskApp
 
 Move into directory
-cd FlaskApp
+-cd FlaskApp
 
 Make another directory
-mkdir FlaskApp
-
-Move into directory
-cd FlaskApp/
+-mkdir FlaskApp
 
 #/to/flask/directory/FlaskApp/FlaskApp
+Move into directory
+-cd FlaskApp/
 
 Make two directories, static
 mkdir static
@@ -76,36 +79,37 @@ if __name__ == "__main__":
 Press control+x to save it, yes, enter
 
 Proceed installing flask. Update and upgrade first
-apt-get update
-apt-get upgrade
+-apt-get update
+-apt-get upgrade
 
 Install pip first before installing flask
-apt-get install python-pip
+-apt-get install python-pip
 
 Install virtual environment
-pip install virtualenv
+-pip install virtualenv
 
 Now to set up the virtualenv directory
-sudo virtualenv venv
+-sudo virtualenv venv
 
 Activate the virtual environment
-source venv/bin/activate
+-source venv/bin/activate
 
 Now install Flask within virtual environment
-pip install Flask
+-pip install Flask
 
 Testing pyhton code
-python __init__.py #for pyhton2
-python3 __init__.py #for pyhton3
+-python __init__.py #for pyhton2
+-python3 __init__.py #for pyhton3
 
 Hit control+c to out form application
 
 Stop virtual environment
-deactivate
+-deactivate
 
 Setup Flask configuration file
-nano /etc/apache2/sites-available/FlaskApp.conf
+-nano /etc/apache2/sites-available/FlaskApp.conf
 
+----------------------------Copy this----------------------------------------
 <VirtualHost *:80>
                 ServerName yourdomain.com(ipaddress)
                 ServerAdmin youremail@email.com
@@ -124,15 +128,17 @@ nano /etc/apache2/sites-available/FlaskApp.conf
                 CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 
-Ru
-sudo a2ensite FlaskApp
-service apache2 reload
+------------------------------------------------------------------------------
+
+Run
+-sudo a2ensite FlaskApp
+-service apache2 reload
 
 Configure WSGI file
-cd /var/www/FlaskApp
+-cd /var/www/FlaskApp
 
 nano flaskapp.wsgi
-copy paste this code
+-copy paste this code
 
 --------------------code-----------------------------
 #!/usr/bin/python
@@ -154,7 +160,7 @@ application.secret_key = "abc1234"
 Save and exit
 
 Restart apache
-service apache2 restart
+-service apache2 restart
 
 
 Goto web browser enter ip address
