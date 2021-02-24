@@ -2,6 +2,7 @@
 Install and configure Flask phpmyadmin and Apache
 
 First install apache with mysql
+<br>
 -sudo apt-get install apache2 mysql-client mysql-server
 
 Setup mysql
