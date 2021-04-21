@@ -33,7 +33,7 @@ Open this on a web browser<br>
 -localhost/phpmyadmin​
 
 Install WSGI <br>
--sudo apt-get install libapache2-mod-wsgi for python2 <br>
+-sudo apt-get install libapache2-mod-wsgi (for python2) <br>
 -sudo apt-get install libapache2-mod-wsgi-py3 (for python3)
 
 Enabled WSGI <br>
@@ -142,12 +142,12 @@ nano flaskapp.wsgi<br>
 
 #!/usr/bin/python
 
-'''add this code if using virtual environment for python2 <br>
+'''add this code if using virtual environment (for python2) <br>
 activate_this = '/var/www/FlaskApp/FlaskApp/venv/bin/activate_this.py'<br>
 execfile(activate_this, dict(__file__=activate_this))<br>
 '''<br>
 
-'''add this code if using virtual environment for python3 <br>
+'''add this code if using virtual environment (for python3) <br>
 activate_this = '/var/www/FlaskApp/FlaskApp/venv/bin/activate_this.py'<br>
 with open(activate_this) as file_:<br>
     exec(file_.read(), dict(__file__=activate_this))<br>
