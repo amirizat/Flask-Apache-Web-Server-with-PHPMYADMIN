@@ -33,7 +33,8 @@ Open this on a web browser<br>
 -localhost/phpmyadmin​
 
 Install WSGI <br>
--sudo apt-get install libapache2-mod-wsgi
+-sudo apt-get install libapache2-mod-wsgi for python2 <br>
+-sudo apt-get install libapache2-mod-wsgi-py3 (for python3)
 
 Enabled WSGI <br>
 -sudo a2enmod wsgi
